@@ -6,7 +6,7 @@ exports.getList = async (req, res) => {
     //B1: gửi query để lấy data về
     var products = await Product.find();
     //B2: truyền data sang cho giao diện
-    res.render("home", { products });
+    res.render("list", { products });
   } catch (error) {
     console.log(error);
   }

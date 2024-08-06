@@ -30,7 +30,7 @@ mongoose
   .connect("mongodb://127.0.0.1:27017/wd18412") //wd18412: tên database
   .then((result) => {
     //router dùng trên client
-    app.get("/home", ProductController.getList); //danh sách sp
+    app.get("/list", ProductController.getList); //danh sách sp
     app.get("/create", ProductController.create); //form tạo mới
     app.post("/save", upload.single("image"), ProductController.save); //lưu vào db
     app.get("/edit/:id", ProductController.edit); //form sửa
