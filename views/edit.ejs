@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            /* Màu nền nhẹ nhàng, dễ chịu */
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1 {
+            color: #333;
+            /* Màu chữ tiêu đề tối */
+            text-align: center;
+            margin-top: 20px;
+            font-size: 2em;
+            /* Kích thước chữ lớn hơn */
+        }
+
+        form {
+            background-color: white;
+            /* Nền trắng cho form */
+            border-radius: 10px;
+            /* Bo góc form */
+            width: 400px;
+            /* Độ rộng cố định cho form */
+            margin: 30px auto;
+            /* Căn giữa với lề tự động */
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            /* Hiệu ứng bóng tinh tế */
+        }
+
+        form div {
+            margin-bottom: 20px;
+            /* Khoảng cách giữa các trường */
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            /* Khoảng cách giữa label và input */
+        }
+
+        input[type="text"],
+        input[type="file"] {
+            width: 100%;
+            /* Chiều rộng 100% */
+            padding: 10px;
+            /* Padding cho tiện lợi khi nhập */
+            border: 1px solid #ccc;
+            /* Viền nhẹ */
+            border-radius: 5px;
+            /* Bo góc input */
+            box-sizing: border-box;
+            /* Tính toán chiều rộng bao gồm padding và border */
+            transition: border-color 0.3s;
+            /* Hiệu ứng chuyển màu viền */
+        }
+
+        input[type="text"]:focus {
+            border-color: #4CAF50;
+            /* Chuyển sang màu xanh khi focus */
+            outline: none;
+            /* Bỏ viền khi focus */
+        }
+
+        input[type="file"] {
+            padding: 5px;
+            /* Padding nhỏ hơn cho file input */
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            /* Màu nền nút gửi */
+            color: white;
+            /* Màu chữ nút gửi */
+            padding: 10px;
+            /* Padding cho nút gửi */
+            border: none;
+            /* Không có viền */
+            border-radius: 5px;
+            /* Bo góc nút gửi */
+            cursor: pointer;
+            /* Con trỏ dạng tay khi hover */
+            transition: background-color 0.3s;
+            /* Hiệu ứng chuyển màu nền */
+            display: inline-block;
+            /* Đặt nút gửi thành khối dạng inline */
+            width: 100%;
+            /* Chiều rộng nút gửi 100% */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+            /* Màu khi hover */
+        }
+
+        img {
+            max-width: 100px;
+            /* Giới hạn chiều rộng hình ảnh */
+            border-radius: 5px;
+            /* Bo góc cho ảnh */
+            margin-top: 10px;
+            /* Khoảng cách trên ảnh */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Add sản phẩm</h1>
+    <form action="/update/<%= product.id %>" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="title">Name</label>
+            <input type="text" name="name" value="<%= product.name %>">
+        </div>
+        <div>
+            <label for="price">Price</label>
+            <input type="text" name="price" value="<%= product.price %>">
+        </div>
+        <div>
+            <label for="image">Image</label>
+            <input type="file" name="image">
+            <% if (product.image) { %>
+                <img src="/uploads/<%= product.image %>" alt="">
+                <% } %>
+        </div>
+        <input type="submit" value="update" onclick="confirm(`Sửa sản phẩm thành công`)"><br>
+    </form>
+</body>
+
+</html>

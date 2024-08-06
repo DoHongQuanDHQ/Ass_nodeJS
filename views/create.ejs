@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm Sản Phẩm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            /* Màu nền nhẹ nhàng */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            /* Căn giữa theo chiều ngang */
+            align-items: center;
+            /* Căn giữa theo chiều dọc */
+            height: 100vh;
+            /* Cao 100% của viewport */
+        }
+
+        h1 {
+            color: #333;
+            /* Màu chữ tiêu đề */
+            text-align: center;
+            /* Căn giữa cho tiêu đề */
+        }
+
+        form {
+            background: white;
+            /* Màu nền trắng cho form */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            /* Bóng đổ cho form */
+            width: 300px;
+            /* Chiều rộng cụ thể cho form */
+        }
+
+        form div {
+            margin-bottom: 15px;
+            /* Khoảng cách giữa các trường nhập */
+        }
+
+        label {
+            font-weight: bold;
+            /* Chữ đậm cho label */
+            display: block;
+            /* Căn dòng cho label */
+            margin-bottom: 5px;
+            /* Khoảng cách dưới label */
+            color: #666;
+            /* Màu chữ cho label */
+        }
+
+        input[type="text"],
+        input[type="file"],
+        input[type="number"] {
+            width: 100%;
+            /* Chiều rộng 100% cho input */
+            padding: 10px;
+            border: 1px solid #ddd;
+            /* Viền cho input */
+            border-radius: 5px;
+            /* Bo góc cho input */
+            box-sizing: border-box;
+            /* Tính toán chiều rộng bao gồm padding */
+            transition: border-color 0.3s;
+            /* Hiệu ứng chuyển màu viền */
+        }
+
+        input[type="text"],
+        input[type="number"]:focus {
+            border-color: #4CAF50;
+            /* Màu viền khi focus */
+            outline: none;
+            /* Bỏ viền mặc định khi focus */
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            /* Màu nền nút gửi */
+            color: white;
+            /* Màu chữ nút gửi */
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            /* Bo góc nút gửi */
+            cursor: pointer;
+            /* Hiển thị con trỏ tay khi hover */
+            transition: background-color 0.3s, transform 0.2s;
+            /* Hiệu ứng chuyển màu và phóng to */
+            width: 100%;
+            /* Chiều rộng nút gửi là 100% */
+            font-size: 16px;
+            /* Kích thước chữ nút gửi */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+            /* Màu khi hover lên nút gửi */
+            transform: translateY(-2px);
+            /* Hiệu ứng nâng lên khi hover */
+        }
+
+        input[type="submit"]:active {
+            transform: translateY(0);
+            /* Hiệu ứng trả về vị trí khi nhấn */
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/save" method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="">Name</label>
+            <input type="text" name="name">
+        </div>
+        <div>
+            <label for="">Price</label>
+            <input type="number" name="price">
+        </div>
+        <div>
+            <label for="">Description</label>
+            <input type="text" name="description">
+        </div>
+        <div>
+            <label for="">Image</label>
+            <input type="file" name="image">
+        </div>
+        <input type="submit" value="Thêm mới">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/n@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #4CAF50;
+            /* Màu nền xanh lá */
+            color: white;
+            /* Màu chữ trắng */
+            padding: 20px;
+            /* Khoảng cách xung quanh */
+            text-align: center;
+            /* T căn giữa nội dung */
+        }
+
+        header h1 {
+            margin: 0;
+            /* Xóa lề mặc định */
+            font-size: 2.5em;
+            /* Kích thước chữ lớn hơn cho tiêu đề */
+        }
+
+        nav {
+            margin-top: 10px;
+            /* Khoảng cách trên nav */
+        }
+
+        nav a {
+            color: white;
+            /* Màu chữ cho các liên kết */
+            text-decoration: none;
+            /* Xóa gạch chân cho liên kết */
+            margin: 0 15px;
+            /* Khoảng cách giữa các liên kết */
+            padding: 8px 16px;
+            /* Khoảng cách trong các liên kết */
+            border-radius: 4px;
+            /* Bo tròn các góc */
+            transition: background-color 0.3s;
+            /* Hiệu ứng chuyển màu nền */
+        }
+
+        nav a:hover {
+            background-color: #45a049;
+            /* Màu nền khi di chuột qua liên kết */
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            /* Thêm hiệu ứng chuyển tiếp */
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+            /* Màu khi hover */
+        }
+
+        .table {
+            width: 95%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            /* Hiệu ứng bóng */
+        }
+
+        .table th,
+        .table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .table th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+
+        .table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .table tr:hover {
+            background-color: #f1f1f1;
+            /* Hiệu ứng hover */
+        }
+
+        img {
+            max-width: 80px;
+            max-height: 80px;
+            border-radius: 5px;
+            /* Góc bo cho ảnh */
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+            /* Hiệu ứng bóng cho ảnh */
+        }
+
+        form {
+            display: inline;
+            /* Giữ cho các nút hành động nằm trên cùng một dòng */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Admin</h1>
+            <a href="/home">Trang chủ</a>
+            <a href="/user">User</a>
+            <a href="/thongke">Thông Kê</a>
+            <a href="/register">Đăng ký</a>
+            <a href="/logout">Logout</a>
+        </header>
+        <h1>Trang Sản Phẩm</h1>
+        <div>
+            <button class="btn"><a href="/create">Add Pro</a></button>
+        </div>
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+            <% for (let i=0; i < products.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= products[i].id %>
+                    </td>
+                    <td>
+                        <%= products[i].name %>
+                    </td>
+                    <td>
+                        <%= products[i].price %>
+                    </td>
+                    <td>
+                        <%= products[i].description %>
+                    </td>
+                    <td><img src="/uploads/<%= products[i].image %>" width="100" height="100"></td>
+
+                    <td>
+                        <button class="btn"><a href="/edit/<%= products[i].id %>"
+                                onclick="confirm(`Bạn thực sự muốn sửa sản phẩm`)"> Edit</a></button>
+
+                        <button class="btn"><a href="/delete/<%= products[i].id %>"
+                                onclick="confirm(`Bạn thực sự muốn xóa sản phẩm`) "> Delete</a></button>
+                    </td>
+                </tr>
+                <% } %>
+        </table>
+    </div>
+</body>
+
+</html>

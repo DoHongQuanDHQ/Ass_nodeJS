@@ -1,0 +1,41 @@
+<%- include ('header.ejs') %>
+  <%- include ('baner.ejs') %>
+
+    <section class="section-products">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-md-8 col-lg-6">
+            <div class="header">
+              <h3>Tất Cả Sản Phẩm Kinh Doanh</h3>
+              <h2>Danh Sách</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+          <!-- Single Product -->
+          <% for(let i=0; i < 20 && i < products.length; i++) { %>
+            <div class="col">
+              <div class="card">
+                <img src="/uploads/<%= products[i].image %>" class="card-img-top" alt="...">
+                <div class="card-body thumb-content">
+                  <h5><a href="/showproduct/<%= products[i].id %>" class="card-title">
+                      <%= products[i].name %>
+                    </a></h5>
+                  <p style="margin-top: 5px;" class="card-price">Giá: <%= products[i].price %> VNĐ</p>
+                </div>
+                <div style="margin-left: 5px;" class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <%}%>
+        </div>
+      </div>
+    </section>
+    <%- include ('footer.ejs') %>

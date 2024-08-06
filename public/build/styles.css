@@ -1,0 +1,123 @@
+@keyframes colorChange {
+    0% {
+        color: rgb(0, 0, 0);
+    }
+
+    14% {
+        color: rgb(0, 0, 0);
+    }
+
+    29% {
+        color: rgb(0, 0, 0);
+    }
+
+    43% {
+        color: rgb(0, 0, 0);
+    }
+
+    57% {
+        color: rgb(0, 0, 0);
+    }
+
+    71% {
+        color: rgb(0, 0, 0);
+    }
+
+    86% {
+        color: rgb(0, 0, 0);
+    }
+
+    100% {
+        color: rgb(0, 0, 0);
+    }
+}
+
+.container {
+    width: 400px;
+    margin: auto;
+    margin-top: 10%;
+    padding: 20px;
+    animation: colorChange 8s infinite;
+    border: 1px solid;
+    border-radius: 5%;
+}
+
+h1 {
+    text-align: center;
+    animation: colorChange 16s infinite;
+}
+
+a {
+    animation: colorChange 10s infinite;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    margin-bottom: 10px;
+    padding: 10px;
+    animation: colorChange 1s infinite;
+    background-color: ghostwhite;
+}
+
+button {
+    margin-bottom: 10px;
+    padding: 10px;
+    animation: colorChange 1s infinite;
+
+}
+
+button a {
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+}
+
+button:hover {
+    animation: colorChange 1s infinite;
+    background-color: red;
+
+}
+
+input {
+    background-color: seashell;
+}
+
+
+label[for="avatar"] {
+    color: #fff;
+    margin-bottom: 5px;
+    animation: colorChange 10s infinite;
+}
+
+input[type="file"] {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+
+}
+
+
+input[type="file"]::-webkit-file-upload-button {
+    background-color: #c11010;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+input[type="file"]:hover {
+    border: 1px solid;
+    animation: colorChange 1s infinite;
+}
+
+.kc {
+    margin-top: 20px;
+}

@@ -1,0 +1,40 @@
+<%- include ('header.ejs') %>
+    <div style="border: solid 2px rgb(100, 227, 68);" class="container py-4 my-4 mx-auto d-flex flex-column">
+        <div class="header">
+            <div class="row r1">
+                <div class="col-md-9 abc">
+                    <h1 style="color: rgb(54, 60, 226);">
+                        <%= product.name %>
+                    </h1>
+                </div>
+                <div class="col-md-3 text-right pqr"><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                        class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                <p class="text-right para">Lượt Mua Hàng: 250</p>
+            </div>
+        </div>
+        <div class="container-body mt-4">
+            <div class="row r3">
+                <div class="col-md-5 p-0 klo">
+                    <ul>
+                        <li style="font-size: 22px; color: rgba(237, 30, 30, 0.861);">Giá: <%=
+                                Number(product.price).toLocaleString("vi") %> VNĐ</li>
+                        <li>Chất Liệu TITANIUM</li>
+                        <li>Miễn Phí Vận Chuyển</li>
+                        <li>Có Hơn 1200 Chi Tiết</li>
+                        <li>Giao Hàng Nhanh Trong 3-5 Ngày</li>
+                        <li>Giao Hàng Toàn Quốc</li>
+                        <li>Được Sản Xuất Tại Apple</li>
+                    </ul>
+                </div>
+                <div class="col-md-7"> <img src="/uploads/<%= product.image %>" width="90%" height="95%"> </div>
+            </div>
+        </div>
+        <div class="footer d-flex flex-column mt-5">
+            <div class="row r4">
+                <div class="col-md-2 mio offset-md-4"><a href="#">Thêm Vào Giỏ Hàng</a></div>
+                <div class="col-md-2 myt "><button type="button" class="btn btn-outline-warning"><a href="#">Mua
+                            Hàng</a></button></div>
+            </div>
+        </div>
+    </div>
+    <%- include ('footer.ejs') %>
